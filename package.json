@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --open --host",
-    "build": "vite build",
+    "build": "vite build --base=/Netras-Games/",
     "deploy": "gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview"
