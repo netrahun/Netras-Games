@@ -122,7 +122,7 @@ function App() {
       <motion.div variants={containerAnimation}>
         <motion.video variants={popIn} controls>
           <motion.source
-            src={"/videos/" + game.videosrc}
+            src={"/Netras-Games/videos/" + game.videosrc}
             type="video/mp4"
           ></motion.source>
         </motion.video>
