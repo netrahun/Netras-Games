@@ -1,0 +1,34 @@
+{
+  "FinishedGames": [
+    {
+      "gamename": "Doofen Groove",
+      "genre": "Simon Says",
+      "description": "Created in Unity, I wanted to make a simple dance game that was based on simon says because at the time, I thought it would be funny. It started from a cowboy face stand off game, but evolved into this dance simon says game with Phineas and Ferb characters because I also thought it be funny. I 3D modeled Perry the Platypus, and Dr. Doofenshmirtz, looked up image references, and did some animations in Blender. I was not able to fix the animation positions but kept it the way it was it looked fun.",
+      "videosrc": "doofgroove.mp4"
+    },
+    {
+      "gamename": "Not Duck Hunt",
+      "genre": "Arcade",
+      "description": "Created in Unity, I made this game with the intention to learn raycasting. I already knew how to get user input, object collisions, and needed a game to learn raycasting. I picked duck hunt as a inspiration because I had never done a 2D game in Unity before so I went with it and recreated the aspects that I could understand. I made the background and other sprites myself using Aesprite, and modeled a gun in Blender then rendered it out.",
+      "videosrc": "duckhunt.mp4"
+    },
+    {
+      "gamename": "The Pirate",
+      "genre": "2D Platformer",
+      "description": "This game was inspired by the mario 2d platformers I was playing at the time, so I wanted to make my own version, thus the pirate game was born. I started by designing the movement mechanics, models, and graphics, then I programmed the movement, animations and GUI. The hardest part was tweaking the values so that the movement was correct, and or played right.",
+      "videosrc": "thepirate.mp4"
+    },
+    {
+      "gamename": "Bad pong",
+      "genre": "3D Pong",
+      "description": "I made this game because I wanted to make my own pong game. The assignment was to figure out how to use Unity's global physics materials, so I made a physics material with a high level of bounce, and then applied it to the ball. I added a vector force when the player hits the ball, and then added a bot that hits it back with a random direction so there was a challenge.",
+      "videosrc": "badpong.mp4"
+    },
+    {
+      "gamename": "Wata Boy",
+      "genre": "3D Platformer",
+      "description": "This was the last game of my first game design class, and we were given any game to do, so I went with a simple platformer where you can walk and collect things for points. I made the models and placed it into the scene, and animated the character in Blender and applied it based on the movement. It was difficult because I was not that confident with Unity at the time, but I was slowly learning it more and more as I continued to make more projects.",
+      "videosrc": "wataboy.mp4"
+    }
+  ]
+}
