@@ -114,6 +114,19 @@ function BigHero() {
 }
 
 function App() {
+
+  let videoPop = (indexOfElement) => {
+    return ({
+      show: indexOfElement % 2 ? {
+        transform: "rotateZ(-1deg) scaleY(1)"
+      } : {transform: "rotateZ(1deg) scaleY(1)"},
+      hide: {
+        transform: "rotateZ(0deg) scaleY(0)"
+      }
+    })
+  }
+
+
   let gameList = games.FinishedGames.map((game, index) => (
     <motion.section
       key={index}
@@ -125,7 +138,7 @@ function App() {
     >
       <div>
 
-      <motion.video variants={containerAnimation} controls>
+        <motion.video variants={videoPop(index)} transition={{ type: "spring", duration: 1 }} controls="true">
         <motion.source
           src={"/Netras-Games/videos/" + game.videosrc}
           type="video/mp4"
@@ -167,7 +180,7 @@ function App() {
         variants={containerAnimation}
       >
         <motion.h3 variants={itemAnimation} className="color5">
-          Thats all, my email is {" "}
+          Thats all, my email is &nbsp;
           <motion.a
             initial={{color: "var(--lavender)"}}
             whileHover={{ letterSpacing: ".5ch", color: "var(--light-green)"}}
