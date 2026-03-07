@@ -9,7 +9,7 @@
     {
       "gamename": "Not Duck Hunt",
       "genre": "Arcade",
-      "description": "Created in Unity, I made this game with the intention to learn raycasting. I already knew how to get user input, object collisions, and needed a game to learn raycasting. I picked duck hunt as a inspiration because I had never done a 2D game in Unity before so I went with it and recreated the aspects that I could understand. I made the background and other sprites myself using Aesprite, and modeled a gun in Blender then rendered it out.",
+      "description": "I made this game with the intention to learn raycasting. I already knew how to get user input, object collisions, and needed a game to learn raycasting. I picked duck hunt as a inspiration because I had never done a 2D game in Unity before so I went with it and recreated the aspects that I could understand. I made the background and other sprites myself using Aesprite, and modeled a gun in Blender then rendered it out.",
       "videosrc": "duckhunt.mp4"
     },
     {

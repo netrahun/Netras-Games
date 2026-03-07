@@ -42,7 +42,7 @@ let secondaryAnimation = {
     y: 0,
     transition: {
       type: "spring",
-      duration: 2,
+      duration: 1,
     },
   },
   hide: {
@@ -76,19 +76,23 @@ function BigHero() {
       variants={containerAnimation}
     >
       <motion.span
-        initial={{ scaleY: 3, letterSpacing: "2ch"}}
-        animate={{ scaleY: 1, letterSpacing: "0ch", transition: { type: "tween", duration: 3 } }}
+        initial={{ scaleY: 3, letterSpacing: "2ch" }}
+        animate={{
+          scaleY: 1,
+          letterSpacing: "0ch",
+          transition: { type: "tween", duration: 3 },
+        }}
         id="heroText1"
         variants={itemAnimation}
       >
         Welcome
       </motion.span>
       <motion.span
-        initial={{ x: -16, scale: 0}}
+        initial={{ x: -16, scale: 0 }}
         animate={{
           x: 0,
           scale: 1,
-          transition: { type: "spring", duration: 3},
+          transition: { type: "spring", duration: 3 },
         }}
         id="heroText2"
       >
@@ -99,12 +103,12 @@ function BigHero() {
         animate={{
           y: 0,
           opacity: 1,
-          transition: { ease: "spring", duration: 1, delay: 1.5},
+          transition: { ease: "spring", duration: 1, delay: 1.5 },
         }}
-        id="heroText3">
+        id="heroText3"
+      >
         Netra's Games
       </motion.span>
-
     </motion.div>
   );
 }
@@ -119,34 +123,40 @@ function App() {
       variants={containerAnimation}
       viewport={{ once: true }}
     >
-      <motion.div variants={containerAnimation}>
-        <motion.video variants={popIn} controls>
-          <motion.source
-            src={"/Netras-Games/videos/" + game.videosrc}
-            type="video/mp4"
-          ></motion.source>
-        </motion.video>
+      <div>
+
+      <motion.video variants={containerAnimation} controls>
+        <motion.source
+          src={"/Netras-Games/videos/" + game.videosrc}
+          type="video/mp4"
+        ></motion.source>
+      </motion.video>
+
+      <motion.div className="details" variants={itemAnimation}>
+        <motion.span variants={secondaryAnimation}>{game.gamename}</motion.span>
+        <motion.span variants={secondaryAnimation}>{game.genre}</motion.span>
       </motion.div>
 
-      <motion.div className="details" variants={containerAnimation}>
-        <motion.div className="details_justify" variants={itemAnimation}>
-          <motion.span variants={secondaryAnimation}>
-            {game.gamename}
-          </motion.span>
-          <motion.span variants={secondaryAnimation}>{game.genre}</motion.span>
-        </motion.div>
+      </div>
 
-        <motion.p variants={secondaryAnimation}>{game.description}</motion.p>
-      </motion.div>
+      <motion.p variants={secondaryAnimation} className="details_descriptions">{game.description}</motion.p>
     </motion.section>
   ));
 
   return (
     <>
+      <div id="heroWrapper">
+        <BigHero />
+      </div>
 
-      <BigHero />
-
-      <motion.div id="scrollIndicator" initial={{ y: -16, opacity: 0 }} animate={{ y: 0, opacity: 1, transition: { duration: 1, delay: 1} }}>scroll</motion.div>
+      <motion.div
+        id="scrollIndicator"
+        initial={{ y: -16, opacity: 0 }}
+        animate={{ y: 0, opacity: 1, transition: { duration: 1, delay: 1 } }}
+        className="color5"
+      >
+        scroll
+      </motion.div>
 
       {gameList}
 
@@ -156,10 +166,11 @@ function App() {
         viewport={{ once: true }}
         variants={containerAnimation}
       >
-        <motion.h3 variants={itemAnimation}>
-          Thats all, my email is{" "}
+        <motion.h3 variants={itemAnimation} className="color5">
+          Thats all, my email is {" "}
           <motion.a
-            whileHover={{ letterSpacing: "1ch" }}
+            initial={{color: "var(--lavender)"}}
+            whileHover={{ letterSpacing: ".5ch", color: "var(--light-green)"}}
             transition={{ type: "spring" }}
             href="mailto:business.netrahun@gmail.com"
           >

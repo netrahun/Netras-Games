@@ -6,23 +6,59 @@
   --font2: "Bokor", system-ui;
   --font3: "Vend Sans", sans-serif;
 
+  --turf-green: #007848ff;
+  --toasted-almond: #ca895fff;
+  --shadow-grey: #262322ff;
+  --light-green: #a1e887ff;
+  --lavender: #d2d6efff;
+
   font-family: var(--font1);
 
   scrollbar-width: none;
   scroll-behavior: smooth;
 }
 
+/*
+
+ color classes
+
+*/
+
+.color1{
+    color: var(--turf-green);
+}
+.color2{
+    color: var(--toasted-almond);
+}
+.color3{
+    color: var(--shadow-grey);
+}
+.color4{
+    color: var(--light-green);
+}
+.color5{
+    color: var(--lavender);
+}
+
+
 body{
     padding: 0px;
     margin: 0px;
-    background-color: #0077ff;
+
+    background-color: var(--turf-green);
+    background-image: url("/halftone.png");
+    background-blend-mode: difference;
+
+    image-rendering: crisp-edges;
+
+    background-size: 25%;
 
 }
 
 footer{
 
     & a{
-        text-decoration: none;
+        text-decoration: underline;
         color: white;
     }
 }
@@ -39,36 +75,46 @@ footer{
     border: 0px solid transparent;
     border-radius: var(--radius);
 
+    backdrop-filter: blur(2px);
+
     padding: var(--padding);
 
-    background-color: #4488ff;
+    background-color: var(--shadow-grey);
     color: white;
 
-    box-shadow: 0 0 1rem #0022bb;
+    box-shadow: 0 0 .5rem rgba(255, 255, 255, .25);
 
-    & video{
+    & div video{
         width: 100%;
         aspect-ratio: 16/9;
         max-width: 1280px;
+
+        background-color: var(--toasted-almond);
 
         border: 0px solid transparent;
         border-radius: calc(var(--radius) - var(--padding));
     }
 
     & .details{
+        display: flex;
+        justify-content: space-between;
 
-        & .details_justify{
-            display: flex;
-            justify-content: space-between;
+        font-family: var(--font2);
+        font-size: 1.25rem;
 
-            font-family: var(--font3);
-            font-size: 1.25rem;
-            font-weight: 1000;
-        }
+        color: white;
+        filter: drop-shadow(0 2px 2px var(--shadow-grey));
 
-        & p{
-            line-height: 3ch;
-        }
+
+    }
+
+    & .details_descriptions{
+        line-height: 3ch;
+
+        font-family: var(--font3);
+        font-weight: 500;
+
+        filter: drop-shadow(0 2px 2px black);
     }
 }
 
@@ -77,22 +123,32 @@ footer{
     margin-inline: auto;
 }
 
-#bigHero{
-    margin-block: 135px;
+#heroWrapper{
+    height: 90vh;
 
-    & #heroText1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#bigHero{
+    width: 360px;
+
+    color: var(--lavender);
+
+    & :nth-child(1){
         font-size: 3rem;
         font-family: var(--font2);
         display: block;
     }
 
-    & #heroText2{
+    & :nth-child(2){
         font-size: 1.5rem;
         font-family: var(--font1);
         display: block;
     }
 
-    & #heroText3{
+    & :nth-child(3){
         font-size: 3rem;
         font-family: var(--font1);
         display: block;
@@ -101,47 +157,58 @@ footer{
 
 }
 
-/* tablet screen */
-@media screen and (min-width: 960px){
+@media screen and (min-width: 540px){
     .games{
-        display: flex;
         flex-direction: row;
 
-        margin-block: 64px;
+        gap: 8px;
 
-        border: 0px solid transparent;
-        border-radius: 32px;
+        background-size: 100%;
 
-        padding: 32px;
 
-        &:nth-of-type(even){
-            background-color: #0022bb;
-            color: white;
+        &:nth-child(even){
             flex-direction: row-reverse;
         }
 
-        & video{
-            width: 960px;
-            aspect-ratio: 16/9;
-            max-width: 1280px;
-
-            border: 0px solid transparent;
-            border-radius: 16px;
+        & div:nth-child(1){
+            width: 50%;
         }
 
-        & .details{
-            padding: 32px;
 
-            & p{
-                line-height: 3ch;
-            }
+        & video{
+            width: 100%;
+
+            border: none;
+            border-radius: 8px;
+        }
+
+        /*& video:nth-of-type(even){
+            background-color: red;
+        }*/
+
+        & .details_descriptions{
+            margin: 0;
+            padding-inline: 32px;
+            width: 50%;
         }
     }
 
-    #bigHero{
-        margin-block: 360px;
-        max-width: 360px;
+    #heroWrapper{
+        align-items: center;
+    }
+
+}
+
+
+/* tablet screen */
+@media screen and (min-width: 960px){
+
+    .games{
+        max-width: 1280px;
         margin-inline: auto;
+    }
+
+    #bigHero{
     }
 
     footer{
