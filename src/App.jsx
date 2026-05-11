@@ -140,7 +140,7 @@ function App() {
 
         <motion.video variants={videoPop(index)} transition={{ type: "spring", duration: 1 }} controls="true">
         <motion.source
-          src={"/Netras-Games/videos/" + game.videosrc}
+          src={"/videos/" + game.videosrc}
           type="video/mp4"
         ></motion.source>
       </motion.video>

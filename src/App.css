@@ -45,7 +45,7 @@ body{
     padding: 0px;
     margin: 0px;
 
-    background-color: var(--turf-green);
+    background-color: var(--shadow-grey);
     background-image: url("/halftone.png");
     background-blend-mode: difference;
 

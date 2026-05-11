@@ -5,13 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite --open --host",
-    "build": "vite build --base=/Netras-Games/",
+    "build": "vite build",
     "deploy": "gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
-    "gh-pages": "^6.3.0",
     "motion": "^12.34.4",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
