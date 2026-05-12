@@ -80,25 +80,27 @@ function BigHero() {
         animate={{
           scaleY: 1,
           letterSpacing: "0ch",
-          transition: { type: "tween", duration: 3 },
+          transition: { type: "anticipate", duration: 1 },
         }}
         id="heroText1"
         variants={itemAnimation}
       >
-        Welcome
+        Welcome to,
       </motion.span>
-      <motion.span
+
+      {/* <motion.span
         initial={{ x: -16, scale: 0 }}
         animate={{
           x: 0,
           scale: 1,
-          transition: { type: "spring", duration: 3 },
+          transition: { type: "anticipate", duration: 1 },
         }}
         id="heroText2"
       >
         to
-      </motion.span>
-      <motion.span
+      </motion.span>*/}
+
+      {/* <motion.span
         initial={{ y: -16, opacity: 0 }}
         animate={{
           y: 0,
@@ -108,7 +110,8 @@ function BigHero() {
         id="heroText3"
       >
         Netra's Games
-      </motion.span>
+      </motion.span>*/}
+
     </motion.div>
   );
 }
@@ -136,7 +139,7 @@ function App() {
       variants={containerAnimation}
       viewport={{ once: true }}
     >
-      <div>
+      <div className="videoNest">
 
         <motion.video variants={videoPop(index)} transition={{ type: "spring", duration: 1 }} controls="true">
         <motion.source
@@ -158,9 +161,22 @@ function App() {
 
   return (
     <>
-      <div id="heroWrapper">
+      {/* <motion.img
+        id="heroImage"
+        src="/Netras-Games/ng_a_3.webp"
+        initial={{ opacity: 0, y: 32}}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{duration: 4, delay: .25, ease: "anticipate"}}
+      ></motion.img>*/}
+
+      <motion.div id="heroWrapper"
+        initial={{ opacity: 0, y: 128 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ ease: "anticipate", duration: 1, delay: 0 }}
+
+      >
         <BigHero />
-      </div>
+      </motion.div>
 
       <motion.div
         id="scrollIndicator"

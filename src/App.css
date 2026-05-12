@@ -1,6 +1,6 @@
 :root {
   margin: 0;
-  padding: 16px;
+  padding: 0;
 
   --font1: "Anybody", sans-serif;
   --font2: "Bokor", system-ui;
@@ -45,13 +45,14 @@ body{
     padding: 0px;
     margin: 0px;
 
-    background-color: var(--shadow-grey);
-    background-image: url("/halftone.png");
-    background-blend-mode: difference;
+    background-color: #060606ff;
+    background-image: url("/ng_bg_2.webp");
 
     image-rendering: crisp-edges;
 
-    background-size: 25%;
+    background-size: 200%;
+
+    background-repeat: repeat;
 
 }
 
@@ -63,6 +64,21 @@ footer{
     }
 }
 
+#heroImage{
+    position: absolute;
+
+    place-self: center center;
+
+    width: 100%;
+
+    image-rendering: crisp-edges;
+
+    transition: left .5s ease-in-out, top .5s ease-in-out;
+
+    z-index: -1;
+
+}
+
 .games{
     --radius: 16px;
     --padding: 8px;
@@ -71,6 +87,7 @@ footer{
     flex-direction: column;
 
     margin-block: 64px;
+    margin-inline: 16px;
 
     border: 0px solid transparent;
     border-radius: var(--radius);
@@ -124,42 +141,52 @@ footer{
 }
 
 #heroWrapper{
-    height: 90vh;
+    margin-bottom: 64px;
+
+    height: 540px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+
+    background-image: url("/ng_a_3.webp");
+    background-size: cover;
+    background-position: center;
+
+    padding-inline: 16px;
 }
 
 #bigHero{
-    width: 360px;
+    position: relative;
 
-    color: var(--lavender);
+    top: -150px;
+    height: fit-content;
+    width: fit-content;
+
+    color: var(--toasted-almond);
 
     & :nth-child(1){
-        font-size: 3rem;
-        font-family: var(--font2);
-        display: block;
-    }
-
-    & :nth-child(2){
-        font-size: 1.5rem;
+        font-size: 2rem;
         font-family: var(--font1);
+        font-weight: 500;
         display: block;
+        line-height: 60px;
     }
-
-    & :nth-child(3){
-        font-size: 3rem;
-        font-family: var(--font1);
-        display: block;
-        font-weight: 200;
-    }
-
 }
 
 @media screen and (min-width: 540px){
+
+    body{
+        background-size: 200%;
+    }
+
+    #heroImage{
+
+    }
+
     .games{
-        flex-direction: row;
+        flex-direction: column;
 
         gap: 8px;
 
@@ -168,12 +195,12 @@ footer{
         border: none;
         border-radius: 32px;
 
-        &:nth-child(even){
-            flex-direction: row-reverse;
+        & .videoNest:nth-child(even){
+            flex-direction: col;
         }
 
-        & div:nth-child(1){
-            width: 50%;
+        & .videoNest{
+            width: 100%;
         }
 
 
@@ -183,18 +210,14 @@ footer{
             border: none;
             border-radius: 16px;
 
-            box-shadow: -16px -16px var(--light-green);
+            /*box-shadow: -16px -16px var(--light-green);*/
 
-        }
-
-        &:nth-child(even) div video{
-            box-shadow: 16px -16px var(--light-green);
         }
 
         & .details_descriptions{
             margin: 0;
             padding-inline: 32px;
-            width: 50%;
+            width: calc(100%-32px);
 
             height: fit-content;
             margin-block: auto;
@@ -202,22 +225,114 @@ footer{
 
     }
 
+    #bigHero{
+        top: -200px;
+
+        & :nth-child(1){
+            font-size: 2rem;
+            line-height: 80px;
+        }
+    }
+
     #heroWrapper{
         align-items: center;
+
+        height: 768px;
     }
 
 }
 
 
 /* tablet screen */
-@media screen and (min-width: 960px){
+@media screen and (min-width: 768px){
+
+    #heroImage{
+    }
 
     .games{
         max-width: 1280px;
-        margin-inline: auto;
+        margin-inline: 16px;
+
+        flex-direction: column;
+
+        & .videoNest{
+            width: 100%;
+        }
+
+        & div video{
+            box-shadow: -16px -16px var(--light-green);
+        }
+
+        &:nth-child(even) div video{
+            box-shadow: 16px -16px var(--light-green);
+        }
+
+        & .details_descriptions {
+            width: calc(100% - 32px);
+        }
     }
 
     #bigHero{
+        width: fit-content;
+
+        & :nth-child(1){
+            font-size: 2rem;
+            font-family: var(--font1);
+            display: block;
+        }
+    }
+
+    #heroWrapper{
+        align-items: center;
+    }
+
+    footer{
+        width: fit-content;
+        margin-inline: auto;
+    }
+}
+
+/* tablet screen */
+@media screen and (min-width: 960px){
+
+    body{
+        background-size: 100%;
+        image-rendering: crisp-edges;
+    }
+
+    #heroImage{
+    }
+
+    .games{
+        max-width: 1080px;
+        margin-inline: auto;
+        flex-direction: row;
+
+        & .videoNest{
+            width: 50%;
+        }
+
+        &:nth-child(even){
+            flex-direction: row-reverse;
+        }
+
+        & .details_descriptions {
+            width: 50%;
+        }
+    }
+
+    #bigHero{
+        width: fit-content;
+        top: -270px;
+
+        & :nth-child(1){
+            font-size: 2rem;
+            font-family: var(--font1);
+        }
+    }
+
+    #heroWrapper{
+        height: 1080px;
     }
 
     footer{
